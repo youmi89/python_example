@@ -20,3 +20,9 @@ print(float(3))
 x = float("int")
 y = float("-inf")
 
+# split
+
+a = "a-b-c" # 스플릿 : 나눈다
+a = 123456-1122335 # 주민번호 앞자리, 뒷자리, 성별숫자로 구분가능
+c,d = a.split("-")
+print(c)
