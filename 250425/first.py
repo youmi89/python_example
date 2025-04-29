@@ -22,5 +22,4 @@ print(s,"+",d,"=", f)
 
 # 타입 체크
 
-print(type(PI))
-print(type(name))
+
