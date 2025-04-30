@@ -55,13 +55,25 @@ st = "modulabs is good"
 sta = "good" not in st # "good"이라는 문자가 st에 없니?
 sta2 ="good" in st # "good"이라는 문자가 st에 있니?
 
-#if ~ elif ~ else
+#if조건 (~하면 ~해라) 
+
+# ~ elif (2로 나눴을때 조건문이냐) 
+
+# ~ else 나머지 (이도저도아닐때사용)
+
+if a > 10:
+    print("good")
+elif b == 20:
+    print("20입니다.")
+elif a == 10:
+    print("10입니다.")
+else:
+    print("이도저도 아니다.")
+
 
 age = 19
-
 if age <= 19:
     print("청소년입니다.")
-    
 elif age < 30:
     print("성인입니다.")
 else:
@@ -74,5 +86,6 @@ if yyyy % 2 == 0:
 else:
     print("홀수 년도에 태어났습니다.")
 
+# 파이썬은 들여쓰기가 중요하다
 
 
