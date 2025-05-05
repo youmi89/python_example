@@ -230,10 +230,9 @@ print(s4,s5)
 이것을 공백을 기준으로 쪼개어 각 변수에 담아 출력
 이름은 f-string통해 세번 반복해서 출력'''
 
-s10 = input()
-
-a,b,c,d,e = s10.split()
-print(a,b,c,d,e)
+#s10 = input()
+#a,s,d,z,x = s10.split()
+#print(a,s,d,z,x)
 
 s1 = "180 60 남 25 김아무개"
 print(s1,s2,s3)

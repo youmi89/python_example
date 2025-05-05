@@ -22,10 +22,10 @@ area = math.pi * 5 * 5
 print(f"반지름이 {r}인 원의 넓이는{area:78.5} 입니다.")
 
 # 문제 5
-#speed = input("60")
-#time = input("2")
+#speed = float(input("시속을 입력하세요 (60km/h): "))
+#time = float(input("시간을 입력하세요 (2시간, h): "))
 #distance = speed * time
-#print(f"총 이동거리는 {distance:.2f}km입니다.")
+#print(f"총 이동 거리는 {distance} km입니다.")
 
 # 문제 6
 a = "안녕하세요."
@@ -34,16 +34,17 @@ print(a + s)
 
 # 문제 7
 #inch = float(input("10:"))
-#cm =inch * 2.54
-#print(f"{inch}인치는 {cm:.2f}센치미터입니다.")
+#cm = inch * 2.54
+#print(f"{inch}인치는 {cm}센치미터 입니다.")
 
 # 문제 8
-#meal_cost = (input("50000원:"))
-#tip_percent = (input("10:"))
-#tip = meal_cost * (tip_percent / 100)
-#total = meal_cost + tip
-#print(f"팁 금액:{tip:.0f}원")
-#print(f"총 지불금액:{total:.0f}원")
+meal_cost = int(input("50000 (원): "))
+tip_percent = int(input("15 (%): "))
+tip_amount = meal_cost * (tip_percent // 100)
+total_amount = meal_cost + tip_amount
+
+print(f"\n팁 금액: {tip_amount}원")
+print(f"총 지불 금액: {total_amount}원")
 
 # 문제 9
 #height_cm = float(input("170cm:"))
