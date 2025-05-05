@@ -121,7 +121,7 @@ print(s[0])
 print(s[6])
 print(s[3])
 print(s[-1])
-#print(s[300]) >  string index out of range > 인덱스 범위를 벗어났나고 알려줌
+# print(s[300]) >  string index out of range > 인덱스 범위를 벗어났나고 알려줌
 # 주민등록번호가 13자리
 # 에러에 대한 대비코드를 사용
 
@@ -158,13 +158,86 @@ print(a,b,c,d)
 #문제 3
 print(f"{a}{b}{c}{d}") # 오롯이 숫자만(띄어쓰기 비포함) 출력
 
+# 입력구현 (input = 약어 ip)
+#  a = imput()  << 입력을 기다리는중
+# print("okay") < 코드가 띄어져 있다. 대기하고 있는중이다
+# 파이썬 코드가 실행이 되서 끝이 났을경우 컴퓨더입장이에서는 입력값을 기억할 필요가 없다
+# a = input()
+# 파이썬에서 숫자를 입력해도 무조건 스트링타입(문자)
+"""
+입력을 몇가지 변수에 담아서 f-string, 문자 붙이기, 문자 반복하기 등 
+여러 기술을 활용해 출력해보자
+"""
+# f-string 이용하여 문자 붙이기
+a = "9"
+b = "16"
+print(f"나의 생일은 {a}월 {b}일 입니다")
+# 문자반복하기
+str10 = "37세"
+print(str10 * 3)
+# 문자이어붙이기
+str12 = "생일을 "
+str13 = "축하해주세요"
+print(str12+str13)
+str14 = str12+str13
 
+# 형변환
+# ptint(type(a)) 숫자를 문자로 입력하는 
+# b = int(a) a는 문자니까 숫자로 바꿔라
 
+#print(type(a))
+#b = int(a)
+#print(type(b))
 
+#a = 1  # < 숫자를 문자로 바꿀수 있다
+#print(type(str(a)))  # < 안에서 밖으로 읽는다 
 
+#@ 문자열 고유 기능 
+s = 'weniv CEO licat'
+print(s.lower()) #<'너가 입력한 문자를 소문자로 바꿔준다
 
+m = "i LOVE you" #< 원본은 훼손되면 안된다
+print(m.lower())
+# 새로운변수를 만들어서 할당하는게 낫다, 오리지널 원본은 절대로 회손되면 안된다
 
+# find(터미널에 못찾을경우-1 반영), index(에러를 반영)
+s = 'weniv CEO licat'
+print(s.find("good")) # 터미널에 -1로 뜸 찾지못했다는 뜻
+# print(s.index("good")) # ValueError: substring not found <찾지 못할경우 터미널에 에러가 뜸
+print(s.find("weniv")) # 0이 나오는경우 글자의 시작점 숫자가 출력
+print(s.find("licat")) # 10이 나오는경우 글자의 시작접 숫자가 출력
 
+print(s.index("weniv")) # 문자에서 찾았을경우, 숫자로 표기되지만
+print(s.index("licat"))  # 에러가 났을경우, 에러가 터짐 
 
+# count 문구에서 특정문자를 찾는것
+print(s.count("i")) 
 
+# replace 특정문구를 찾아 변경
+s2 = s.replace("CEO","CTO") 
+print(s2)
+
+# split (쪼갠다)
+s3 = "weniv-corp"
+# s3.split (공백을 기준으로 나눔)
+# s3.split("-") ("-" 기준으로 나눔)
+s4,s5 = s3.split("-")
+print(s4,s5)
+
+'''
+입력이 들어온다. 키 몸무게 성별 나이 이름
+예시 180 60 남 25 김아무개
+이것을 공백을 기준으로 쪼개어 각 변수에 담아 출력
+이름은 f-string통해 세번 반복해서 출력'''
+
+s10 = input()
+
+a,b,c,d,e = s10.split()
+print(a,b,c,d,e)
+
+s1 = "180 60 남 25 김아무개"
+print(s1,s2,s3)
+
+str10 = "25세"
+print(str10 * 3)
 
