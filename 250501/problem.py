@@ -22,10 +22,10 @@ area = math.pi * 5 * 5
 print(f"반지름이 {r}인 원의 넓이는{area:78.5} 입니다.")
 
 # 문제 5
-#speed = float(input("시속을 입력하세요 (60km/h): "))
-#time = float(input("시간을 입력하세요 (2시간, h): "))
-#distance = speed * time
-#print(f"총 이동 거리는 {distance} km입니다.")
+speed = 60
+time = 2
+distance = speed * time
+print(f"총 이동 거리는 {distance} km입니다.")
 
 # 문제 6
 a = "안녕하세요."
@@ -33,28 +33,46 @@ s = "반갑습니다."
 print(a + s)
 
 # 문제 7
-#inch = float(input("10:"))
-#cm = inch * 2.54
-#print(f"{inch}인치는 {cm}센치미터 입니다.")
+inch = 10
+cm = inch * 2.54
+print(f"{inch}인치는 {cm}센치미터 입니다.")
 
 # 문제 8
-meal_cost = int(input("50000 (원): "))
-tip_percent = int(input("15 (%): "))
-tip_amount = meal_cost * (tip_percent // 100)
+# 사용자 입력 받기
+meal_cost = int(50000)
+tip_percent = int(15)
+tip_amount = meal_cost * tip_percent // 100
 total_amount = meal_cost + tip_amount
-
 print(f"\n팁 금액: {tip_amount}원")
 print(f"총 지불 금액: {total_amount}원")
 
 # 문제 9
-#height_cm = float(input("170cm:"))
-#weight_kg = float(input("65kg:"))
-#weight_m = height_cm / 100
-#bmi = weight_kg / height_m * 2
-#print(f"bmi는{bmi:.2f}입니다.")
+height_cm = float(170)
+weight_kg = float(65)
+weight_m = height_cm / 100
+bmi = weight_kg / (weight_m ** 2)
+print(f"\n bmi는 {bmi:.2f}입니다.")
 
 # 문제 10
-#nums = input("10 20 30 40 50:")
-#num_list = list(map(int,nums.split()))
-#print(f"첫번째숫차: {num_list[0]}")
-#print(f"마지막숫자: {num_list[-1]}")
+numbers = "20 40 60 80 100".split()
+print(f"첫번째숫자: {numbers[0]}")
+print(f"마지막숫자: {numbers[-1]}")
+
+# 문제 11
+a = 10
+b = 20
+a, b = b, a
+print(f"\n교환 후 a ={a}, b = {b}")
+
+# 문제 12
+string = ("파이썬 프로그래밍")
+print(len(string))
+print(f"첫번째 글자:", string[0])
+print(f"마지막 글자:", string[-1])
+
+# 문제 13
+#full_name = input("홍 길동")
+#print(f"Initials: {first_initial}.{last_initial}")
+
+
+
