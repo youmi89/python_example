@@ -70,9 +70,116 @@ print(len(string))
 print(f"첫번째 글자:", string[0])
 print(f"마지막 글자:", string[-1])
 
-# 문제 13
+# 문제 13 (이니셜 만들기)
 #full_name = input("홍 길동")
 #print(f"Initials: {first_initial}.{last_initial}")
+
+# 문제 14
+number = 3.14159
+print(f"{number:.2f}")
+
+# 문제 15
+age = int(input("나이를 입력하세요:"))
+if age < 19:
+    print("미성년자")
+elif age <= 34:
+    print("청년")
+elif age <= 64:
+    print("중장년")
+else:
+    print("노년")
+
+# 문제 16
+#text = int(input("문자를 입력하세요:"))
+#    if char =='':
+#        space_count += 1
+#    elif'0' <= char <= '9':
+#        digit_count += 1
+#    elif('a' <= char <= 'z') or ('A' <= char <= 'Z'):
+#        alpha_count += 1
+#    else:
+#        special_count += 1
+#print("공백 수:", space_count)
+#print("숫자 수:", digit_count)
+#print("문자 수:", alpha_count)
+#print("특수문자 수:", special_count)
+
+# 문제 17
+values = [0,1,"","hello","0","False"]
+
+for v in values:
+    print(f"{repr(v)} -> {bool(v)}")
+
+# 문제 18
+num =  int(input("숫자를 입력하세요: "))
+
+if num % 2 == 0:
+    print("짝수입니다.")
+else:
+    print("홀수입니다.")
+
+# 문제 19
+str = ("사과 바나나 딸기 오렌지")
+splitted_str =  str.split()
+print(splitted_str)
+
+# 문제 20
+#date = input("온도와 단위를 입력하세요:")
+#temp_str, unit = data.split(",")
+#temp = fliat(temp_str.strip())
+#unit = unit.strip().upper()
+
+#if unit == "C":
+#    result = (temp * 9/5) + 32
+#    print(f"{temp}도 섭씨는 {result:2f}도 화씨입니다.")
+#elif unit == "F":
+#    result = (temp - 32) * 5/9
+#    print(f"{temp}도 화씨는 {result:2f}도 섭씨입니다.")
+#else:
+#    print("단위는 C 또는 F중 하나여야 해요.")
+
+# 문제 21
+s = ("Python Programming")
+
+print(s.lower()) # 문자전체 소문자 출력
+print(s.upper()) # 문자전체 대문자 출력
+print(s.title()) # 앞글자 대문자로 출력
+
+# 문제 22
+s = ("파이썬프로그래밍")
+print(string[0:3]) # 앞에 3자리 출력
+print(string[-3:]) # 끝에 3자리 출력
+print(string[::-1]) # 거꾸로 출력
+
+# 문제 23
+s = ("파이썬은 간결하고 배우기 쉬운 프로그래밍 언어입니다.")
+print(s.find("프로그래밍"))
+
+# 문제 24
+
+a = ("Hello World")
+print(a.replace("o", "*")) # replace>>찾고자 하는 문자를 다른문자로 변경해주는 코드
+
+# 문제 25
+s = ("banana")
+print(s.count('a')) # 문자열에서 "a"는 몇번 포함 되어있는지 출력하기위한 코드
+
+# 문제 26
+
+
+
+
+# 문제 27
+
+ex = "python"
+print(ex.ljust(10, "*")) 
+
+# 문제 28
+
+
+
+# 문제 29
+#text = "Hello, World! How are you?"
 
 
 
