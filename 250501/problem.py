@@ -124,19 +124,26 @@ splitted_str =  str.split()
 print(splitted_str)
 
 # 문제 20
-#date = input("온도와 단위를 입력하세요:")
-#temp_str, unit = data.split(",")
-#temp = fliat(temp_str.strip())
-#unit = unit.strip().upper()
+#temp = input()
+#temp = float(temp)
+#unit = input() # C 또는 F
+#if unit == "C": # 섭씨라면
+#    convert = temp * 9/5 + 32
+#    print(f"{temp}.C는 {convert}.F입니다.")
+#elif unit == "F": # 화씨라면
+#    convert = (temp-32) * 5/9
+#    print(f"{temp}.F는 {convert}.C입니다.")
+#else: #c와 f가 아닌 다른 값이 입력 됐을 때
+#    print("잘못입력하였습니다.")
 
-#if unit == "C":
-#    result = (temp * 9/5) + 32
-#    print(f"{temp}도 섭씨는 {result:2f}도 화씨입니다.")
-#elif unit == "F":
-#    result = (temp - 32) * 5/9
-#    print(f"{temp}도 화씨는 {result:2f}도 섭씨입니다.")
-#else:
-#    print("단위는 C 또는 F중 하나여야 해요.")
+### ex
+food = input()
+
+if food.find("짜장") != -1:
+    if "쟁반" in food:
+        print("쟁반짜장입니다")
+else:
+    print("짬뽕입니다")
 
 # 문제 21
 s = ("Python Programming")
