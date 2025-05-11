@@ -124,17 +124,17 @@ splitted_str =  str.split()
 print(splitted_str)
 
 # 문제 20
-#temp = input()
-#temp = float(temp)
-#unit = input() # C 또는 F
-#if unit == "C": # 섭씨라면
-#    convert = temp * 9/5 + 32
-#    print(f"{temp}.C는 {convert}.F입니다.")
-#elif unit == "F": # 화씨라면
-#    convert = (temp-32) * 5/9
-#    print(f"{temp}.F는 {convert}.C입니다.")
-#else: #c와 f가 아닌 다른 값이 입력 됐을 때
-#    print("잘못입력하였습니다.")
+temp = input()
+temp = float(temp)
+unit = input() # C 또는 F
+if unit == "C": # 섭씨라면
+    convert = temp * 9/5 + 32
+    print(f"{temp}.C는 {convert}.F입니다.")
+elif unit == "F": # 화씨라면
+    convert = (temp-32) * 5/9
+    print(f"{temp}.F는 {convert}.C입니다.")
+else: #c와 f가 아닌 다른 값이 입력 됐을 때
+    print("잘못입력하였습니다.")
 
 ### ex
 food = input()
