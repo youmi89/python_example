@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        /* 이 컨테이너를 기준으로 5번박스의 위치를 잡고 싶다면? */
+        position: relative;
+      }
+      .box {
+        background-color: #ccc;
+        width: 200px;
+        height: 200px;
+      }
+      .pink {
+        background-color: pink;
+        /* 기본값 */
+        position: static;
+        /* 원래 있어야할 위치를 기준으로 상대적으로 이동 */
+        /* position: relative; */
+        /* position: absolute; */
+        top: 30px;
+        left: 30px;
+        /* top,left 위,왼쪽(왼쪽 상단)에서 30px씩 이동시킨다. */
+      }
+      .baby {
+        background-color: teal;
+        width: 100px;
+        height: 100px;
+        /* 이 baby 컨테이너가 pink 컨테이너의 가운데쯤에 위치하게 하려면? */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box pink">
+        <div class="baby">5</div>
+      </div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+    </div>
+  </body>
+</html>
