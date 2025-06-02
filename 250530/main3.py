@@ -5,6 +5,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+
 @app.get("/items")
 def get_items(skip: int = 0, limit: int = 10):
     return {"skip": skip, "limit": limit}
