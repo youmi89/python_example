@@ -1,0 +1,13 @@
+# 라이브러리 의존성 명시
+# 
+
+django-environ
+
+python-llm[all]
+
+# major, minor, bugfix
+#  - bugfix 버전이 올라가는 것은 기능이 변경되지 않는다
+django~=5.2.0     # bugfix 버전중에 최신을 설치   
+# django==5.2.0   #정확히 같은버전
+# django<=5.2.0
+# django>=5.2.0
