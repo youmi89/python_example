@@ -13,3 +13,15 @@ urlpatterns = [
     path("messages/new/", views.chat_message_new),
 
 ]
+
+# chat/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("", views.index),
+    path("messages/new/", views.chat_message_new),
+     path("puzzle/", views.puzzleroom_list),
+    path("puzzle/<str:name>/", views.puzzle_room),  # ADDED
+]

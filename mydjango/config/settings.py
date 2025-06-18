@@ -9,11 +9,17 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+from environ import Env
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = Env()
+
+ENV_PATH = BASE_DIR / ".env"
+env.read_env(ENV_PATH, overwrite=True)
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -117,7 +123,20 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# 파이썬 기본에서 지원하는 환경변수 조회
+# import os
+# OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+
+# django-environ을 통해서 환경변수 조회: 장고 친화적인 기능이 많다
+
+# 환경변수에 OPENAI_API_KEY가 있으면 변환하고, 없으면 대신 None 변환
+OPENAI_API_KEY = env.str('OPENAI_API_KEY', default=None)
+# 환경변수에 UPSTAGE_API_KEY가 있으면 변환하고, 없으면 대신 None 변환
+UPSTAGE_API_KEY = env.str('UPSTAGE_API_KEY', default=None)

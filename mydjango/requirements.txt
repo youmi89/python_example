@@ -1,2 +1,3 @@
 django~=5.2.0
-git
+django-environ
+pyhub-llm[all]
