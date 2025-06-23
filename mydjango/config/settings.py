@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # local apps
     "blog",
     "chat",
+    "baemin",
 ]
 
 MIDDLEWARE = [

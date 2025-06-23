@@ -165,7 +165,10 @@ def puzzleroom_edit(request: HttpRequest, id: int) -> HttpResponse:
 
     return render(
         request,
+        # 이 템플릿 내의 코드는 모두 문자열!
         "chat/puzzleroom_form.html",
+        # "image_url" 이라는 이름으로 image_url 값을 전달한다
+        # 대개 같은 이름으로 지정한다
         {
             "form": form,
         },
