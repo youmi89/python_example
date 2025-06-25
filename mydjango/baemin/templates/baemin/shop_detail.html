@@ -1,34 +1,24 @@
-<!doctype html>
-<html lang="lp">
+{% extends "baemin/base.html" %}
+{% load django_bootstrap5 %}
 
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Document</title>
-  </head>
+{% block content %}
+  <h2>{{ shop.name }}</h2>
 
-  <body>
+  {{ shop.description }}
 
-    <h1>baemin/shop_detail.html</h1>
+  <hr/>
 
-    <h2>{{ shop.name }}</h2>
+  <a href="/baemin/">목록으로</a>
+  <a href="/baemin/{{ shop.pk }}/reviews/new/">댓글 쓰기</a>
 
-    {{ shop.description }}
+  <h3>댓글 목록</h3>
 
-    <hr/>
-
-    <a href="/baemin/">목록으로</a>
-    <a href="/baemin/{{ shop.pk }}/reviews/new/">댓글 쓰기</a>
-    <a href="/baemin/">검색</a>
-
-    <h3>댓글 목록</h3>
-    {% for review in review_list %}
-      <div>
-        {{ review.content }}
-        ({{ review.rating }})
-      </div>
-      {% emptr %}
-      <div>등록된 리뷰가 없습니다. :-</div>
-    {% endfor %}
-  </body>
-
-</html>
+  {% for review in review_list %}
+    <div>
+      {{ review.content }}
+      ({{ review.rating }})
+    </div>
+    {% empty %}
+    <div>등록된 리뷰가 없습니다. :-(</div>
+  {% endfor %}
+{% endblock %}

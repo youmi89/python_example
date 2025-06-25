@@ -31,10 +31,11 @@ SECRET_KEY = "django-insecure-8b^rjcv$3eou8tu+o47opwcam5^7-x3h!(ey301fbb^*bc4x+f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list(
+    "ALLOWED_HOSTS",
+    default=["127.0.0.1"],
+)
 
-
-# Application definition
 
 INSTALLED_APPS = [
     # django apps
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # third apps
     "debug_toolbar",
+    "django_bootstrap5",
     # local apps
     "blog",
     "chat",
@@ -152,3 +154,8 @@ UPSTAGE_API_KEY = env.str("UPSTAGE_API_KEY", default=None)
 # 장고 서버를 구동한 컴퓨터에서 직접 접속했을 때에만 DDT를 보여준다
 # 다른 컴퓨터에서 접속했을 때에는 DDT가 보여지지 않는다
 INTERNAL_IPS = ["127.0.0.1"]
+
+# DDT 추가 설정
+#  - 기본 구성으로는 INTERNAL_IPS에 지정된 주소로 접속했을 때에 무조건 DDT 보여줍니다.
+#  - 커스텀으로 파이썬 함수를 통해 보여줄 지 말지를 결정해줄 수 있어요.
+#    ngrok 을 통한 요청인지 여부를 판단해서, 결정해줄 수 있을 듯 합니다.
