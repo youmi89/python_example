@@ -8,4 +8,6 @@ urlpatterns = [
     # URL Converter : int (정수 문자열 패턴에 매칭)
     path("<int:pk>/", views.shop_detail),
     path("<int:shop_pk>/reviews/new/", views.review_new),
+    path("<int:shop_pk>/reviews/<int:pk>/edit/", views.review_edit),
+    path("<int:shop_pk>/reviews/<int:pk>/delete/", views.review_delete),
 ]
