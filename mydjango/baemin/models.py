@@ -12,6 +12,10 @@ class Shop(models.Model):
     photo = models.ImageField()  # 이미지만
 
 
+class Meta:
+    ordering = ["-id"]
+
+
 # def naldator_min_1(value):
 #     """인자의 값이 1 이상이기를 기대합니다."""
 #     if value <1:

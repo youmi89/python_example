@@ -3,26 +3,62 @@ from urllib import request
 
 from django.contrib import messages
 from django.http import HttpRequest, HttpResponse
-from django.http import Http404
+
+# from django.http import Http404
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
 from .models import Shop, Review
 from .forms import ReviewForm
 
 
-# 최신의 가게 목록 페이지를 보여줄 거예요.
-#  - 최신의 데이터는 DB 안에 있죠. 그러니 매번 DB 조회를 할 겁니다.
-def shop_list(request):
-    # 데이터베이스에서 baemin_shop 테이블의 모든 레코드를
-    # 조회할 준비 (아직 데이터를 가져오진 않았습니다.)
-    qs = Shop.objects.all()  # QuerySet
+class ShopListView(ListView):
+    model = Shop
+    paginate_by = 3
 
-    return render(
-        request,
-        template_name="baemin/shop_list.html",
-        context={
-            "shop_list": qs,
-        },
-    )
+    # 아래 설정이 디폴트 설정
+    # template_name = "baemin/shop_list.html"
+    # 요청에 따라, 사용하는 템플릿을 변경해봅시다.
+
+    # 부모 클래스의 get_template_names 메서드를 재정의 (override)
+    def get_template_names(self):
+        # 클래스 기반 뷰는 현재 요청 객체 : self.request
+        if "naked" in self.request.GET:  # dict에서 해당 Key가 사전에 있는 지만 확인
+            # 무한스크롤에서 다음 페이지 내용이라면?
+            return "baemin/_shop_list.html"  # !!!
+
+        # 아래의 코드는 원래 메서드의 기본 동작을 수행
+        return super().get_template_names()
+
+
+# 클래스를 통해서 새로운 뷰 함수를 생성을 합니다.
+shop_list = ShopListView.as_view()  # 코드라기보다, 설정에 가까운 코드.
+# # 최신의 가게 목록 페이지를 보여줄 거예요.
+# #  - 최신의 데이터는 DB 안에 있죠. 그러니 매번 DB 조회를 할 겁니다.
+# def shop_list(request):
+#     # 데이터베이스에서 baemin_shop 테이블의 모든 레코드를
+#     # 조회할 준비 (아직 데이터를 가져오진 않았습니다.)
+#     qs = Shop.objects.all()  # QuerySet
+#     #  qs = qs.order_by('-id')
+
+#     # page = 1
+#     page = request.GET.get( ket: "page", default:1)
+#     paginate_by = 5
+
+#     # qs = qs[0:5]
+#     # qs = qs[5:10]
+#     # qs = qs[10:15]
+
+#     start_index = page - 1
+#     end_index = page * paginate_by
+#     qs = qs[srart_index:end_index]
+
+#     return render(
+#         request,
+#         template_name="baemin/shop_list.html",
+#         context={
+#             "shop_list": qs,
+#         },
+#     )
 
 
 # TODO: baemin/shop_list.html 템플릿을 만들어보기. 하얀 배경도 OK. chatgpt 등을 통한 코드 생성도 OK.
@@ -59,9 +95,6 @@ def shop_detail(request, pk):
         template_name="baemin/shop_detail.html",
         context={"shop": shop, "review_list": review_qs},
     )
-
-
-# TODO: baemin/shop_detail.html 템플릿을 만들어보기.
 
 
 def review_new(request, shop_pk):
