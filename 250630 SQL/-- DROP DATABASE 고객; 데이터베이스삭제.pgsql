@@ -1,0 +1,2 @@
+-- DROP DATABASE 고객; 데이터베이스삭제
+-- DROP TABLE 고객; 테이블삭제
